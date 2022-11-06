@@ -13,11 +13,12 @@ body {
 }
 
 .todo-app {
+  margin: 0 10px ;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 520px;
-  min-height: 300px;
+  max-width: 520px;
+  min-height: 200px;
   background: #161a2b;
   text-align: center;
   margin: 128px auto;
@@ -37,7 +38,7 @@ h1 {
 }
 
 .todo-form {
-
+  padding: 0 15px;
   margin-bottom: 32px;
 }
 
@@ -139,3 +140,20 @@ h1 {
   font-weight: 400;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+/* design for responsive */
+.todo-app-wrapp{
+  width: 100%;
+  padding: 0 20px;
+}
+
+@media screen and (max-width:480px){
+  .todo-button {
+ margin-top: 10px;
+  }
+  .todo-input {
+width: auto;
+  }
+
+}
+

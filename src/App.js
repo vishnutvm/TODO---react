@@ -4,9 +4,12 @@ import TodoList from './combonents/TodoList';
 
 function App() {
   return (
-    <div className='todo-app'> 
+    <div className='todo-app-wrapp'>
+        <div className='todo-app'> 
    <TodoList/>
     </div>
+    </div>
+  
   );
 }
 

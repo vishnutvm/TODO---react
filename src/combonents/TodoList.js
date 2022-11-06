@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
+// to get  the data from localStorage
+const getLocalItems = ()=>{
+  let todos = localStorage.getItem('todos')
+  if(todos){
+  return JSON.parse(localStorage.getItem('todos')) 
+  }else{
+    return[];
+  }
+}
+
 function TodoList() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(getLocalItems());
 
   //gettin value enterd in the input feald
   const addTodo = (todo) => {
@@ -36,7 +46,10 @@ const removeTodo = id =>{
    setTodos(removeArr)
 }
 
-
+// add data to localStorage
+useEffect(()=>{
+  localStorage.setItem('todos',JSON.stringify(todos ))
+},[todos])
 
 
   const completeTodo = (id) => {
